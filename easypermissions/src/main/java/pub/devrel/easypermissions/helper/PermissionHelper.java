@@ -3,12 +3,13 @@ package pub.devrel.easypermissions.helper;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
-import androidx.annotation.NonNull;
-import androidx.annotation.StyleRes;
-import androidx.fragment.app.Fragment;
-import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.List;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.StyleRes;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 /**
  * Delegate class to make permission calls based on the 'host' (Fragment, Activity, etc).
@@ -62,12 +63,12 @@ public abstract class PermissionHelper<T> {
                                    @StyleRes int theme,
                                    int requestCode,
                                    @NonNull String... perms) {
-        if (shouldShowRationale(perms)) {
-            showRequestPermissionRationale(
-                    rationale, positiveButton, negativeButton, theme, requestCode, perms);
-        } else {
+//        if (shouldShowRationale(perms)) {
+//            showRequestPermissionRationale(
+//                    rationale, positiveButton, negativeButton, theme, requestCode, perms);
+//        } else {
             directRequestPermissions(requestCode, perms);
-        }
+//        }
     }
 
     public boolean somePermissionPermanentlyDenied(@NonNull List<String> perms) {
